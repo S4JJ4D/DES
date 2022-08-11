@@ -1,5 +1,5 @@
-#ifndef DES_FCN_HPP
-#define DES_FCN_HPP
+#ifndef DES_HPP
+#define DES_HPP
 
 #include <bitset>
 #include <tuple>
@@ -65,4 +65,4 @@ std::bitset<DES::SIZE::DES_BLOCKSIZE> EncryptDES(const std::bitset<DES::SIZE::DE
 /* DES Decryption */
 std::bitset<DES::SIZE::DES_BLOCKSIZE> DecryptDES(const std::bitset<DES::SIZE::DES_BLOCKSIZE>& ciphertext, const std::bitset<DES::SIZE::KEY>& key, bool printSteps = false);
 
-#endif
+#endif // ! DES_HPP
