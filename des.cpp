@@ -56,7 +56,7 @@ std::tuple<std::bitset<DESC::SIZE::IP_SOUTPUT>, std::bitset<DESC::SIZE::IP_SOUTP
         if (i < DESC::SIZE::IP_SOUTPUT)
             leftBitset[k - DESC::SIZE::IP_SOUTPUT] = inBitset[idx];
         else
-            rightBitset[k]                        = inBitset[idx];
+            rightBitset[k]                         = inBitset[idx];
     }
 
     return {leftBitset, rightBitset};
