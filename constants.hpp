@@ -234,7 +234,7 @@ namespace DES
             DES_BLOCKSIZE         {64},
             DES_HALF_BLOCKSIZE    {32};
 
-    } // ! namespace SIZE
+    } // ! namespace DES::SIZE
 
 } // ! namespace DES
 
