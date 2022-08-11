@@ -224,7 +224,7 @@ std::bitset<DESC::SIZE::FEISTEL_ROUND_OUTPUT> DES::FeistelRound(const std::bitse
     std::bitset<DESC::SIZE::FEISTEL_ROUND_OUTPUT> outBitset{};
     for(size_t i{}; i < DESC::SIZE::FEISTEL_ROUND_SOUTPUT; ++i)
     {
-        outBitset[i]                                    = outR[i];
+        outBitset[i]                                     = outR[i];
         outBitset[i + DESC::SIZE::FEISTEL_ROUND_SOUTPUT] = outL[i];
     }
 
