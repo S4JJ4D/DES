@@ -87,8 +87,7 @@ private:
     /** Key Schedule **/
     std::array<std::bitset<DESC::SIZE::SUBKEY>, DESC::SIZE::ROUND_COUNT> KeySchedule(const std::bitset<DESC::SIZE::KEY>& key);
 
-};
-
+}; // ! class DES
 
 
 #endif // ! DES_HPP
