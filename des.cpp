@@ -308,6 +308,6 @@ std::bitset<DESC::SIZE::DES_BLOCKSIZE> DES::Decrypt(const std::bitset<DESC::SIZE
             // std::cout << std::hex << "(" << i+1 << ")\t" << "L: " << L.to_ullong() << " R: " << R.to_ullong() << " key: " << keys[i].to_ullong() << std::endl;
     });
 
-    /* 4. Reverse the order of the two segments into the 64-bit block and pass through FP */
+    /* 4. Reverse the order of the two output segments, concatenate them and form a 64-bit block, and finally feed them into FP */
     return FPMap(R, L);
 }
