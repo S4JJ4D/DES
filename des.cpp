@@ -12,7 +12,7 @@
 #include "des.hpp"
 
 
-unsigned int DES::SBoxMap(DESC::SBoxType SBoxType, unsigned int inputVal)
+uint32_t DES::SBoxMap(DESC::SBoxType SBoxType, uint32_t inputVal)
 {
     /* Extract Column-Select */
     auto colSelect{ (inputVal&0b011110) >> 1 };
@@ -20,7 +20,7 @@ unsigned int DES::SBoxMap(DESC::SBoxType SBoxType, unsigned int inputVal)
     auto tempVal{ (inputVal&100001) };
     auto rowSelect{ ( (tempVal >> 5) & 1 )*2 + (tempVal & 1) };
     /* Due to zero-indexing of arrays, a subtraction of 1 is necessary */
-    return DESC::SBoxArray[static_cast<unsigned int>(SBoxType)][rowSelect][colSelect];
+    return DESC::SBoxArray[static_cast<uint32_t>(SBoxType)][rowSelect][colSelect];
 }
 
 
