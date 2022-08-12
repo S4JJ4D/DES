@@ -42,6 +42,7 @@ public:
     std::bitset<DESC::SIZE::KEY> getKey() {return mKey;}
 
 private:
+    
     std::bitset<DESC::SIZE::KEY> mKey;
 
     /** SBox Map - Overload(1) **/
