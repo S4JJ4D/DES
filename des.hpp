@@ -17,7 +17,7 @@
  * @return *this
  */
 template<size_t nBit>
-std::bitset<nBit>& LeftRotate(std::bitset<nBit> &inBitset, uint32_t nPos)
+std::bitset<nBit>& LeftRotate(std::bitset<nBit>& inBitset, uint32_t nPos)
 {
     return inBitset = ( (inBitset << nPos) | (inBitset >> (nBit - nPos)) );
 }
