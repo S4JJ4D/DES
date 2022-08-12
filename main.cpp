@@ -17,13 +17,13 @@ int main(int argc, char** arv)
     auto des{ DES(key) }; 
     auto ciphertext{ des.Encrypt(plaintext) };
     
-    /* Print Results*/
+    /* Print Results */
     std::cout << std::string(80, '-') << "\nplaintext:\n"  << "bit:\t" << plaintext  << "\nhex:\t" << std::hex <<  plaintext.to_ullong() << std::endl;
     std::cout << "ciphertext:\n" << "bit:\t" << ciphertext << "\nhex:\t" << std::hex << ciphertext.to_ullong() << std::endl;
 
     auto recoveredPlaintext{ des.Decrypt(ciphertext) };
     
-    /* Print Results*/
+    /* Print Results */
     std::cout << std::string(80, '-') << "\nciphertext:\n"  << "bit:\t" << ciphertext  << "\nhex:\t" << std::hex <<  ciphertext.to_ullong() << std::endl;
     std::cout << "recovered plaintext:\n" << "bit:\t" << recoveredPlaintext << "\nhex:\t" << std::hex << recoveredPlaintext.to_ullong() << std::endl;
 
