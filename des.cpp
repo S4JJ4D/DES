@@ -178,24 +178,23 @@ std::bitset<DESC::SIZE::FFUNC_OUTPUT> DES::FeistelFunction(const std::bitset<DES
     auto preSBoxData{ ExpansionFunction(inBitset) ^ key };
 
     std::bitset<DESC::SIZE::SBOX_INPUT> inSBox{};
-    size_t k1{};
 
     /* There are 8 SBoxes to Operate */
     for(size_t SBoxStepCount{}; SBoxStepCount < DESC::SIZE::SBOX_COUNT; ++SBoxStepCount)
     {
         inSBox = 0;
-        for (size_t i{}, k2{}; i < DESC::SIZE::SBOX_INPUT; ++i)
+        for (size_t i{}, j{}; i < DESC::SIZE::SBOX_INPUT; ++i)
         {
-            k2 = DESC::SIZE::SUBKEY - 1 - (DESC::SIZE::SBOX_INPUT * SBoxStepCount + i);
-            inSBox[DESC::SIZE::SBOX_INPUT - 1 - i] = preSBoxData[k2];
+            j = DESC::SIZE::SUBKEY - 1 - (DESC::SIZE::SBOX_INPUT * SBoxStepCount + i);
+            inSBox[DESC::SIZE::SBOX_INPUT - 1 - i] = preSBoxData[j];
         }
 
         std::bitset<DESC::SIZE::SBOX_OUTPUT> outSBox{ SBoxMap(static_cast<DESC::SBoxType>(SBoxStepCount), inSBox) };
 
-        for (size_t i{}, k2{}; i < DESC::SIZE::SBOX_OUTPUT; ++i)
+        for (size_t i{}, j{}; i < DESC::SIZE::SBOX_OUTPUT; ++i)
         {
-            k2 = DESC::SIZE::FFUNC_OUTPUT - 1 - (DESC::SIZE::SBOX_OUTPUT * SBoxStepCount + i);
-            outSBoxOperation[k2] = outSBox[DESC::SIZE::SBOX_OUTPUT - 1 - i];
+            j = DESC::SIZE::FFUNC_OUTPUT - 1 - (DESC::SIZE::SBOX_OUTPUT * SBoxStepCount + i);
+            outSBoxOperation[j] = outSBox[DESC::SIZE::SBOX_OUTPUT - 1 - i];
         }
 
     }
