@@ -17,7 +17,7 @@
  * @return *this
  */
 template<size_t nBit>
-std::bitset<nBit>& LeftRotate(std::bitset<nBit> &inBitset, unsigned int nPos)
+std::bitset<nBit>& LeftRotate(std::bitset<nBit> &inBitset, uint32_t nPos)
 {
     return inBitset = ( (inBitset << nPos) | (inBitset >> (nBit - nPos)) );
 }
@@ -46,7 +46,7 @@ private:
     std::bitset<DESC::SIZE::KEY> mKey;
 
     /** SBox Map - Overload(1) **/
-    unsigned int SBoxMap(DESC::SBoxType SBoxType, unsigned int inputVal);
+    uint32_t SBoxMap(DESC::SBoxType SBoxType, uint32_t inputVal);
     /** SBox Map - Overload (2) **/
     std::bitset<DESC::SIZE::SBOX_OUTPUT> SBoxMap(DESC::SBoxType SBoxType, const std::bitset<DESC::SIZE::SBOX_INPUT>& inBitset);
 
