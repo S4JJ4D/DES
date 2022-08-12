@@ -7,15 +7,15 @@
 namespace DESC
 {
     /* Enumeration Class Mapping Names to Numbers */
-    enum class SBoxType : unsigned int
+    enum class SBoxType : uint32_t
     {
         S1=0U, S2, S3, S4, S5, S6, S7, S8
     };
 
     /* Dimension Of SBox Tables */
-    inline constexpr unsigned int nRow{4}, nColumn{16}, nBox{8};
+    inline constexpr uint32_t nRow{4}, nColumn{16}, nBox{8};
     /* Define a 3d Array Holding SBox Tables */
-    inline constexpr std::array<std::array<std::array<unsigned int, nColumn>, nRow>, nBox> SBoxArray
+    inline constexpr std::array<std::array<std::array<uint32_t, nColumn>, nRow>, nBox> SBoxArray
     {{
 
         // S1 = 
@@ -85,8 +85,8 @@ namespace DESC
     }};
 
     /* Dimension Of IP/IP^-1 Tables */
-    inline constexpr unsigned int IPnCol{8}, IPnRow{8};
-    inline constexpr std::array<std::array<unsigned int, IPnCol>, IPnRow> IPArray
+    inline constexpr uint32_t IPnCol{8}, IPnRow{8};
+    inline constexpr std::array<std::array<uint32_t, IPnCol>, IPnRow> IPArray
     {{
 
         {58, 50, 42, 34, 26, 18, 10, 2},
@@ -100,7 +100,7 @@ namespace DESC
 
     }};
 
-    inline constexpr std::array<std::array<unsigned int, IPnCol>, IPnRow> FPArray
+    inline constexpr std::array<std::array<uint32_t, IPnCol>, IPnRow> FPArray
     {{
         
         {40, 8, 48, 16, 56, 24, 64, 32},
@@ -115,8 +115,8 @@ namespace DESC
     }};
 
     /* Dimension Of Expansion Function Tables */
-    inline constexpr unsigned int EXnCol{6}, EXnRow{8};
-    inline constexpr std::array<std::array<unsigned int, EXnCol>, EXnRow> ExpansionArray
+    inline constexpr uint32_t EXnCol{6}, EXnRow{8};
+    inline constexpr std::array<std::array<uint32_t, EXnCol>, EXnRow> ExpansionArray
     {{
         
         {32,  1,  2,  3,  4,  5},
@@ -132,8 +132,8 @@ namespace DESC
 
 
     /* Dimension Of Permutation Tables */
-    inline constexpr unsigned int PnCol{8}, PnRow{4};
-    inline constexpr std::array<std::array<unsigned int, PnCol>, PnRow> PArray
+    inline constexpr uint32_t PnCol{8}, PnRow{4};
+    inline constexpr std::array<std::array<uint32_t, PnCol>, PnRow> PArray
     {{
         
         {16,  7, 20, 21, 29, 12, 28, 17},
@@ -145,8 +145,8 @@ namespace DESC
 
 
     /* Dimension Of PC_1 Tables */
-    inline constexpr unsigned int PC1nCol{7}, PC1nRow{8};
-    inline constexpr std::array<std::array<unsigned int, PC1nCol>, PC1nRow> PC1Array
+    inline constexpr uint32_t PC1nCol{7}, PC1nRow{8};
+    inline constexpr std::array<std::array<uint32_t, PC1nCol>, PC1nRow> PC1Array
     {{
         
         {57, 49, 41, 33, 25, 17,  9},
@@ -162,8 +162,8 @@ namespace DESC
 
 
     /* Dimension Of PC_2 Tables */
-    inline constexpr unsigned int PC2nCol{6}, PC2nRow{8};
-    inline constexpr std::array<std::array<unsigned int, PC2nCol>, PC2nRow> PC2Array
+    inline constexpr uint32_t PC2nCol{6}, PC2nRow{8};
+    inline constexpr std::array<std::array<uint32_t, PC2nCol>, PC2nRow> PC2Array
     {{
         
         {14, 17, 11, 24,  1,  5},
@@ -179,8 +179,8 @@ namespace DESC
 
 
     /* Dimension Of keyShiftArray Tables */
-    inline constexpr unsigned int shiftTableSize{16};
-    inline constexpr std::array<unsigned int, shiftTableSize> keyShiftArray
+    inline constexpr uint32_t shiftTableSize{16};
+    inline constexpr std::array<uint32_t, shiftTableSize> keyShiftArray
     {
         1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1
     };
@@ -190,7 +190,7 @@ namespace DESC
     namespace SIZE
     {
         /* The prefix 'S' signifies "splitted" */
-        inline constexpr unsigned int
+        inline constexpr uint32_t
             SBOX_INPUT            {6},
             SBOX_OUTPUT           {4},
             SBOX_COUNT            {8},      /** Number of SBoxes inside F-Function **/
