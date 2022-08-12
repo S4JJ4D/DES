@@ -29,7 +29,6 @@ std::bitset<DESC::SIZE::SBOX_OUTPUT> DES::SBoxMap(DESC::SBoxType SBoxType, const
     return SBoxMap(SBoxType, inBitset.to_ulong());
 }
 
-
 /* Initial Permutation */
 std::bitset<DESC::SIZE::IP_OUTPUT> DES::IPMap(const std::bitset<DESC::SIZE::IP_INPUT>& inBitset)
 {
@@ -43,7 +42,6 @@ std::bitset<DESC::SIZE::IP_OUTPUT> DES::IPMap(const std::bitset<DESC::SIZE::IP_I
 
     return outBitset;
 }
-
 
 /* Initial Permutation - split the output into two segments */
 std::tuple<std::bitset<DESC::SIZE::IP_SOUTPUT>, std::bitset<DESC::SIZE::IP_SOUTPUT>> DES::IPMapSplitOut(const std::bitset<DESC::SIZE::IP_INPUT>& inBitset)
@@ -62,7 +60,6 @@ std::tuple<std::bitset<DESC::SIZE::IP_SOUTPUT>, std::bitset<DESC::SIZE::IP_SOUTP
     return {leftBitset, rightBitset};
 }
 
-
 /* Final Permutation - Overload (1) */
 std::bitset<DESC::SIZE::FP_OUTPUT> DES::FPMap(const std::bitset<DESC::SIZE::FP_INPUT>& inBitset)
 {
@@ -76,7 +73,6 @@ std::bitset<DESC::SIZE::FP_OUTPUT> DES::FPMap(const std::bitset<DESC::SIZE::FP_I
 
     return outBitset;
 }
-
 
 /* Final Permutation - Overload (2) */
 std::bitset<DESC::SIZE::FP_OUTPUT> DES::FPMap(const std::bitset<DESC::SIZE::FP_SINPUT>& inL, const std::bitset<DESC::SIZE::FP_SINPUT>& inR)
@@ -92,7 +88,6 @@ std::bitset<DESC::SIZE::FP_OUTPUT> DES::FPMap(const std::bitset<DESC::SIZE::FP_S
     return outBitset;
 }
 
-
 /* Permuted choice 1 */
 std::bitset<DESC::SIZE::PC1_OUTPUT> DES::PC1Map(const std::bitset<DESC::SIZE::PC1_INPUT>& inBitset)
 {
@@ -106,7 +101,6 @@ std::bitset<DESC::SIZE::PC1_OUTPUT> DES::PC1Map(const std::bitset<DESC::SIZE::PC
 
     return outBitset;
 }
-
 
 /* Permuted choice 1 - Splits output to left and right segments */
 std::tuple<std::bitset<DESC::SIZE::PC1_SOUTPUT>, std::bitset<DESC::SIZE::PC1_SOUTPUT>> DES::PC1MapSplitOut(const std::bitset<DESC::SIZE::PC1_INPUT>& inBitset)
@@ -125,7 +119,6 @@ std::tuple<std::bitset<DESC::SIZE::PC1_SOUTPUT>, std::bitset<DESC::SIZE::PC1_SOU
     return {leftBitset, rightBitset};
 }
 
-
 /* Permuted Choice 2 (PC-2) */
 std::bitset<DESC::SIZE::PC2_OUTPUT> DES::PC2Map(const std::bitset<DESC::SIZE::PC2_SINPUT>& inL, const std::bitset<DESC::SIZE::PC2_SINPUT>& inR)
 {
@@ -140,7 +133,7 @@ std::bitset<DESC::SIZE::PC2_OUTPUT> DES::PC2Map(const std::bitset<DESC::SIZE::PC
     return outBitset;
 }
 
-
+/* E-Box */
 std::bitset<DESC::SIZE::EBOX_OUTPUT> DES::ExpansionFunction(const std::bitset<DESC::SIZE::EBOX_INPUT>& inBitset)
 {
     std::bitset<DESC::SIZE::EBOX_OUTPUT> outBitset{};
@@ -236,7 +229,6 @@ DES::FeistelRound(const std::bitset<DESC::SIZE::FEISTEL_ROUND_SINPUT>& inL, cons
 {
     return { inR, (FeistelFunction(inR, key) ^ inL) };
 }
-
 
 /* Key Schedule */
 std::array<std::bitset<DESC::SIZE::SUBKEY>, DESC::SIZE::ROUND_COUNT> DES::KeySchedule(const std::bitset<DESC::SIZE::KEY>& key)
