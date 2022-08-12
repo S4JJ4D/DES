@@ -6,7 +6,7 @@
 /** DES related constants **/
 namespace DESC
 {
-    /* Enumeration Class Capturing Various Box Types */
+    /* Enumeration Class Mapping Names to Numbers */
     enum class SBoxType : unsigned int
     {
         S1=0U, S2, S3, S4, S5, S6, S7, S8
