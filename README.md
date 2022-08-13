@@ -1,5 +1,3 @@
-C++ Implementation of Data Encryption Standard
+C++ Implementation of DES (Data Encryption Standard)
 ==================================
 
-DES
- 
