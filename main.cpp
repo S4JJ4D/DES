@@ -9,7 +9,7 @@
 //! https://emvlab.org/descalc/
 
 
-int main(int argc, char** arv)
+int main(int argc, char** argv)
 {
 
     /* DES */
