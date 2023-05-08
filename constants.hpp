@@ -1,12 +1,19 @@
-#ifndef DES_CONST_HPP
-#define DES_CONST_HPP
+#ifndef DES_CONST_HPP_
+#define DES_CONST_HPP_
 
 #include <array>
 
-/** DES related constants **/
+/**
+ * @namespace DESC 
+ * @brief Grouping constants related to DES algorithm
+*/
 namespace DESC
 {
-    /* Enumeration Class Capturing Various Box Types */
+    
+    /**
+     *  @enum  DESC::SBoxType
+     *  @brief Capturing Various Box Types
+     */
     enum class SBoxType : uint32_t
     {
         S1=0U, S2, S3, S4, S5, S6, S7, S8
@@ -186,14 +193,17 @@ namespace DESC
     };
 
 
-    /** Size Constants **/
+    /**
+     * @namespace DESC::SIZE 
+     * @brief Size constants for different mathematical strucutres of DES system
+    */
     namespace SIZE
     {
         /* The prefix 'S' signifies "splitted" */
         inline constexpr uint32_t
             SBOX_INPUT            {6},
-            SBOX_OUTPUT           {4},
-            SBOX_COUNT            {8},      /** Number of SBoxes inside F-Function **/
+            SBOX_OUTPUT           {4}, 
+            SBOX_COUNT            {8},      //!< Number of SBoxes inside F-Function
 
             IP_INPUT              {64},
             IP_OUTPUT             {64},
@@ -217,9 +227,9 @@ namespace DESC
             P_INPUT               {32},
             P_OUTPUT              {32},
 
-            KEY                   {64},     /** A complete key along with its checksum bits is of size 64 **/
+            KEY                   {64},     //!< A complete key along with its checksum bits is of size 64
             SUBKEY                {48},
-            PUREKEY               {56},     /** Key size after dropping parity bits (pure key) **/
+            PUREKEY               {56},     //!< Key size after dropping parity bits (pure key)
             PUREKEY_HALF          {28},
 
             FFUNC_INPUT           {32},
@@ -230,13 +240,13 @@ namespace DESC
             FEISTEL_ROUND_SINPUT  {32},
             FEISTEL_ROUND_SOUTPUT {32},
 
-            ROUND_COUNT           {16},     /** Number of rounds in DES Feistel network **/
+            ROUND_COUNT           {16},     //!< Number of rounds in DES Feistel network
 
-            DES_BLOCKSIZE         {64},     /** DES processes data blocks of size 64 one at a time **/
+            DES_BLOCKSIZE         {64},     //!< DES processes data blocks of size 64 one at a time
             DES_HALF_BLOCKSIZE    {32};
 
     } // ! namespace DESC::SIZE
 
 } // ! namespace DESC
 
-#endif // ! DES_CONST_HPP
+#endif // ! DES_CONST_HPP_
