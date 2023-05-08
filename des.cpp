@@ -1,16 +1,14 @@
 /**
  * @file des.cc
- *
- * @brief This source code implements DES
- *
+ * @brief Implementing DES
  * @author S4JJ4D
- *
  */
 
 #include <iostream>
 
 #include "des.hpp"
 
+using namespace Crypto;
 
 // -------------------------------------------------------------------------------------------------------------------
 /* S-Box */
