@@ -4,9 +4,9 @@
 
 #include "des.hpp"
 
-//! Test with these online tools:
+//! You can verify this code with these online tools: (In both cases, remove `0x` prefix when entering the hex values)
 //! https://www.javacardos.com/tools/des-encrypt-decrypt
-//! https://emvlab.org/descalc/
+//! https://emvlab.org/descalc/ 
 
 
 int main(int argc, char** argv)
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 
     std::bitset<64> plaintext{ 0x02468aceeca86420 }, key{ 0x0f1571c947d9e859 };
 
-    auto des{ DES(key) }; 
+    Crypto::DES des{ key };
     auto ciphertext{ des.Encrypt(plaintext) };
 
     /* Print Results */
