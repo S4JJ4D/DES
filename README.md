@@ -1,4 +1,4 @@
 C++ Implementation of DES (Data Encryption Standard)
 ==================================
 
-written in c++20.
+Written in c++20 using `std::bitset` functionality.
